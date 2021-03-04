@@ -1,0 +1,37 @@
+:root {
+  --font-base: -apple-system, 'BlinkMacSystemFont', 'Hiragino Kaku Gothic ProN',
+    'Hiragino Sans', Meiryo, sans-serif, 'Segoe UI Emoji';
+  --color-tx-base: #000;
+  --color-bg-base: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--color-tx-base);
+  font-family: var(--font-base);
+  line-height: 1.5;
+  word-break: break-word;
+  background-color: var(--color-bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
