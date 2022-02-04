@@ -1,0 +1,83 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch --preserveWatchOutput",
+    "dev:debug": "nest start --debug --watch --preserveWatchOutput",
+    "start": "nest start",
+    "start:prod": "node dist/backend/src/main.js",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@nestjs/axios": "0.0.3",
+    "@nestjs/common": "8.2.0",
+    "@nestjs/core": "8.2.0",
+    "@nestjs/graphql": "9.1.1",
+    "@nestjs/platform-express": "8.2.0",
+    "apollo-server-core": "3.5.0",
+    "apollo-server-express": "3.5.0",
+    "apollo-server-plugin-base": "3.4.0",
+    "axios": "0.24.0",
+    "class-transformer": "0.4.0",
+    "class-validator": "0.13.1",
+    "graphql": "15.7.2",
+    "reflect-metadata": "0.1.13"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "8.1.4",
+    "@nestjs/schematics": "8.0.4",
+    "@nestjs/testing": "8.2.0",
+    "@swc/core": "1.2.107",
+    "@swc/jest": "0.2.5",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.7",
+    "jest": "27.3.1",
+    "regenerator-runtime": "0.13.9",
+    "ts-loader": "9.2.6",
+    "ts-morph": "12.2.0",
+    "ts-node": "10.4.0",
+    "tsconfig-paths": "3.11.0",
+    "typescript": "4.4.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "testRegex": ".*\\.test\\.ts$",
+    "transform": {
+      "^.+\\.ts$": [
+        "@swc/jest",
+        {
+          "jsc": {
+            "parser": {
+              "syntax": "typescript",
+              "tsx": false,
+              "decorators": true,
+              "dynamicImport": false
+            },
+            "target": "es2017"
+          },
+          "module": {
+            "type": "commonjs",
+            "noInterop": true
+          }
+        }
+      ]
+    },
+    "moduleNameMapper": {
+      "^~/(.+)": "<rootDir>/src/$1"
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.ts"
+    ],
+    "testEnvironment": "node",
+    "restoreMocks": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm",
+  "workspaces": [
+    "backend",
+    "core",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "pnpm run build --filter backend --filter core --filter frontend",
+    "dev": "pnpm run dev --filter backend --filter frontend",
+    "test": "pnpm run test --filter backend"
+  },
+  "engines": {
+    "node": "14.18.1",
+    "pnpm": "6.21.0"
+  },
+  "devDependencies": {
+    "prettier": "2.4.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}

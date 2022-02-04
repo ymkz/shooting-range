@@ -1,0 +1,9 @@
+overwrite: true
+schema: './schema/**/*.gql'
+generates:
+  generated/resolvers.ts:
+    - typescript
+    - typescript-resolvers
+  generated/operations.ts:
+    - typescript
+    - typescript-operations
