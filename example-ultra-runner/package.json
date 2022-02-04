@@ -1,0 +1,19 @@
+{
+  "name": "suburi-2021-11-13",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "codegen": "ultra -r codegen",
+    "dev": "ultra -r dev",
+    "build": "ultra -r build",
+    "start": "ultra -r start"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "prettier": "2.4.1",
+    "ultra-runner": "3.10.5"
+  }
+}
