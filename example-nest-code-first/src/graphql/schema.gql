@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BookResult {
+  id: ID!
+  title: String!
+}
+
+type BooksResult {
+  nodes: [BookResult!]!
+  totalCount: Int!
+}
+
+type Mutation {
+  todoCreate(todoCreateInput: TodoCreateInput!): TodoResult!
+  todoDelete(todoDeleteInput: TodoDeleteInput!): TodoResult!
+  todoUpdate(todoUpdateInput: TodoUpdateInput!): TodoResult!
+}
+
+type Query {
+  book(id: ID!): BookResult
+  books: BooksResult!
+  todo(id: ID!): TodoResult
+  todos(limit: Int = 10, offset: Int = 0): TodosResult!
+}
+
+input TodoCreateInput {
+  title: String!
+}
+
+input TodoDeleteInput {
+  id: ID!
+}
+
+type TodoResult {
+  id: ID!
+  title: String!
+}
+
+input TodoUpdateInput {
+  id: ID!
+  title: String!
+}
+
+type TodosResult {
+  nodes: [TodoResult!]!
+  totalCount: Int!
+}
