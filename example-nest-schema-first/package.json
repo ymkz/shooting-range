@@ -1,0 +1,69 @@
+{
+  "name": "nest-schema-fisrt-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "git config --local core.hooksPath .githooks || echo 'CI'",
+    "reset": "rm -rf dist node_modules package-lock.json",
+    "prebuild": "rm -rf dist",
+    "build": "nest build",
+    "typegen": "ts-node src/typegen.ts",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:tsc",
+    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc --noEmit",
+    "fmt": "npm run fmt:prettier && npm run fmt:eslint",
+    "fmt:prettier": "prettier --write .",
+    "fmt:eslint": "eslint --fix .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+  },
+  "lint-staged": {
+    "*.{ts,yml,json,md}": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint --fix",
+      "bash -c 'npm run lint:tsc'"
+    ],
+    "*.graphql": [
+      "bash -c 'npm run typegen'"
+    ]
+  },
+  "dependencies": {
+    "@nestjs/common": "8.0.6",
+    "@nestjs/core": "8.0.6",
+    "@nestjs/graphql": "8.0.2",
+    "@nestjs/platform-fastify": "8.0.6",
+    "apollo-server-fastify": "3.1.2",
+    "gaxios": "4.3.0",
+    "graphql": "15.5.1",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "7.3.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "8.1.1",
+    "@nestjs/testing": "8.0.6",
+    "@types/jest": "26.0.24",
+    "@types/node": "16.4.12",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "jest": "27.0.6",
+    "lint-staged": "11.1.1",
+    "prettier": "2.3.2",
+    "ts-jest": "27.0.4",
+    "ts-loader": "9.2.5",
+    "ts-morph": "11.0.3",
+    "ts-node": "10.1.0",
+    "tsconfig-paths": "3.10.1",
+    "typescript": "4.3.5"
+  }
+}
